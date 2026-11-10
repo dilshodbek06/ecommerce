@@ -21,11 +21,12 @@ import { Input } from "@/components/ui/input";
 
 import axios from "axios";
 import { BASE_URL } from "@/helpers";
-import type { Category } from "@/index";
+import type { Category, Product } from "@/types/index";
 
 function AdminCategories() {
   const [open, setOpen] = useState(false);
   const [categories, setCategories] = useState<Category[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
 
   const [name, setName] = useState("");
   const [imageUrl, setImageUrl] = useState("");
@@ -48,6 +49,7 @@ function AdminCategories() {
 
   useEffect(() => {
     getCategories();
+    getProducts();
   }, []);
 
   const getCategories = async () => {
@@ -59,9 +61,23 @@ function AdminCategories() {
     }
   };
 
+  const getProducts = async () => {
+    try {
+      const { data } = await axios.get(BASE_URL + "/products");
+      setProducts(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const clearForm = () => {
     setImageUrl("");
     setName("");
+  };
+
+  const calculateCount = (categoryId: number) => {
+    const filteredArray = products.filter((p) => p.categoryId === categoryId);
+    return filteredArray.length;
   };
 
   return (
@@ -91,7 +107,7 @@ function AdminCategories() {
                 />
               </TableCell>
               <TableCell>{item.name}</TableCell>
-              <TableCell>0 ta</TableCell>
+              <TableCell>{calculateCount(item.id)} ta</TableCell>
               <TableCell className=" flex items-center gap-2">
                 <Button
                   size={"icon-lg"}
