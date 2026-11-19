@@ -67,10 +67,8 @@
       "id": 1,
       "title": "iPhone 15 Pro Max",
       "imagesUrl": [
-        "https://images.unsplash.com/photo-1696446701796-da61225697cc",
-        "https://images.unsplash.com/photo-1695048133142-1a20484d2569",
-        "https://images.unsplash.com/photo-1592750475338-74b7b21085ab",
-        "https://images.unsplash.com/photo-1605236453806-6ff36851218e"
+        "https://images.unsplash.com/photo-1605236453806-6ff36851218e",
+        "https://images.unsplash.com/photo-1592750475338-74b7b21085ab"
       ],
       "categoryId": 1,
       "price": 12500000
@@ -113,8 +111,8 @@
       "id": 5,
       "title": "Apple Watch Series 9",
       "imagesUrl": [
-        "https://images.unsplash.com/photo-1434493789847-2f02dc6ca359",
         "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1",
+        "https://images.unsplash.com/photo-1434493789847-2f02dc6ca359",
         "https://images.unsplash.com/photo-1544117519-31a4b719223d"
       ],
       "categoryId": 3,
@@ -290,7 +288,35 @@
       "price": 780000
     }
   ],
-
-  "users": [],
+  "users": [
+    {
+      "id": 1,
+      "fullName": "Admin",
+      "phoneNumber": "+998901111111",
+      "password": "admin1234",
+      "role": "ADMIN"
+    },
+    {
+      "id": 2,
+      "fullName": "Admin 2",
+      "phoneNumber": "+998902223344",
+      "password": "admin1234",
+      "role": "ADMIN"
+    },
+    {
+      "fullName": "Nozim Kozimov",
+      "phoneNumber": "+998904447788",
+      "password": "12345678",
+      "role": "USER",
+      "id": 3
+    },
+    {
+      "fullName": "Test User",
+      "phoneNumber": "+998881234567",
+      "password": "12345678",
+      "role": "USER",
+      "id": 4
+    }
+  ],
   "orders": []
 }
