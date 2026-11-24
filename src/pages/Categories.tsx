@@ -1,15 +1,17 @@
 import CategoryCard from "@/components/shared/CategoryCard";
 import Header from "@/components/shared/Header";
 import { BASE_URL } from "@/helpers";
-import type { Category } from "@/types";
+import type { Category, Product } from "@/types";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
 function Categories() {
   const [categories, setCategories] = useState<Category[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     getCategories();
+    getProducts();
   }, []);
 
   const getCategories = async () => {
@@ -19,6 +21,20 @@ function Categories() {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const getProducts = async () => {
+    try {
+      const { data } = await axios.get(BASE_URL + "/products");
+      setProducts(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const calculateCount = (categoryId: number) => {
+    const array = products.filter((item) => item.categoryId === categoryId);
+    return array.length;
   };
 
   return (
@@ -32,7 +48,7 @@ function Categories() {
               key={item.id}
               name={item.name}
               imageUrl={item.imageUrl}
-              productCount={0}
+              productCount={calculateCount(item.id)}
             />
           ))}
         </div>

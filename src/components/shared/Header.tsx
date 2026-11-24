@@ -26,7 +26,13 @@ function Header() {
               Bosh sahifa
             </li>
           </Link>
-          <li className="hover:text-orange-600 cursor-pointer">Mahsulotlar</li>
+          <Link to={"/products"}>
+            <li
+              className={`hover:text-orange-600 ${pathname === "/products" && "text-orange-500"} cursor-pointer`}
+            >
+              Mahsulotlar
+            </li>
+          </Link>
           <Link to={"/categories"}>
             <li
               className={`hover:text-orange-600 ${pathname === "/categories" && "text-orange-500"} cursor-pointer`}

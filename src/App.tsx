@@ -8,6 +8,7 @@ import Register from "./pages/auth/Register";
 import Login from "./pages/auth/Login";
 import { ToastContainer } from "react-toastify";
 import AuthProvider from "./providers/AuthProvider";
+import Products from "./pages/Products";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         {/* users sahifalar */}
         <Route path="/" element={<Home />} />
         <Route path="/categories" element={<Categories />} />
+        <Route path="/products" element={<Products />} />
         {/* auth sahifalar */}
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
