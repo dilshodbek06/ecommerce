@@ -9,6 +9,7 @@ import Login from "./pages/auth/Login";
 import { ToastContainer } from "react-toastify";
 import AuthProvider from "./providers/AuthProvider";
 import Products from "./pages/Products";
+import ProductDetail from "./pages/ProductDetail";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/products/:id" element={<ProductDetail />} />
         {/* auth sahifalar */}
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />

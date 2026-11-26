@@ -133,6 +133,7 @@ function Products() {
           <div className="grid grid-cols-3 gap-3">
             {productsClone.map((item) => (
               <ProductCard
+                id={item.id}
                 key={item.id}
                 title={item.title}
                 categoryName={getCategoryName(item.categoryId)}

@@ -59,6 +59,7 @@ function HomeProducts() {
         <div className="grid gap-3 grid-cols-4 mt-6">
           {products.map((item) => (
             <ProductCard
+              id={item.id}
               key={item.id}
               imageUrl={item.imagesUrl[0]}
               title={item.title}

@@ -1,13 +1,15 @@
 import { Heart, ShoppingCart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface Props {
   title: string;
   price: number;
   imageUrl: string;
   categoryName: string;
+  id: number;
 }
 
-function ProductCard({ categoryName, imageUrl, price, title }: Props) {
+function ProductCard({ categoryName, imageUrl, price, title, id }: Props) {
   return (
     <div className="w-full max-w-sm h-fit overflow-hidden rounded-2xl border border-gray-200 bg-white">
       {/* Product Image */}
@@ -30,7 +32,11 @@ function ProductCard({ categoryName, imageUrl, price, title }: Props) {
           {categoryName}
         </p>
 
-        <h3 className="mb-2 text-lg font-bold text-gray-900">{title}</h3>
+        <Link to={`/products/${id}`}>
+          <h3 className="mb-2 hover:text-orange-500 text-lg font-bold text-gray-900">
+            {title}
+          </h3>
+        </Link>
 
         {/* Price & Cart */}
         <div className="flex items-center justify-between gap-3">
