@@ -9,7 +9,7 @@ interface Props {
 
 function ProductCard({ categoryName, imageUrl, price, title }: Props) {
   return (
-    <div className="w-full max-w-sm overflow-hidden rounded-2xl border border-gray-200 bg-white">
+    <div className="w-full max-w-sm h-fit overflow-hidden rounded-2xl border border-gray-200 bg-white">
       {/* Product Image */}
       <div className="relative h-56 overflow-hidden bg-gray-100">
         <img
